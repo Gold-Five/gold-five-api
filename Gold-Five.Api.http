@@ -1,0 +1,6 @@
+@Gold_Five.Api_HostAddress = http://localhost:5016
+
+GET {{Gold_Five.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
