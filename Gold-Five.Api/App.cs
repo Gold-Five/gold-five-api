@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace jet.piranha.Api
+namespace Gold_Five.Api
 {
-    public class Program
+    public class App
     {
         public static void Main(string[] args)
         {
