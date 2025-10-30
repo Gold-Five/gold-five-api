@@ -1,3 +1,4 @@
+
 namespace Gold_Five.Domain.Catalog;
 
 public class Rating
@@ -5,7 +6,7 @@ public class Rating
     public int Stars { get; set; }
     public string UserName { get; set; }
     public string Review { get; set; }
-}
+
 
 public Rating(int stars, string userName, string review)
 {
@@ -22,4 +23,5 @@ public Rating(int stars, string userName, string review)
     this.Stars = stars;
     this.UserName = userName;
     this.Review = review;
+    }
 }
