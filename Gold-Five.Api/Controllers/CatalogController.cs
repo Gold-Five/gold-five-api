@@ -57,7 +57,5 @@ namespace Gold_Five.Api.Controllers
             return NoContent();  
         }
 
-
-
     }
 }
