@@ -35,5 +35,29 @@ namespace Gold_Five.Api.Controllers
         {
             return Created("/catalog/42", item);
         }
+
+        [HttpPost("{id:int}/ratings")]
+        public IActionResult PostRating(int id, [FromBody] Rating rating)
+        {
+            var item = new Item("Shirt", "Ohio State shirt.", "Mike", 29.99m);
+            item.Id = id;
+            item.AddRating(rating);
+            return Ok(item);
+        }
+
+        [HttpPut("{id:int}")]
+        public IActionResult Put(int id, Item item)  
+        {  
+            return NoContent();  
+        }
+
+        [HttpDelete("{id:int}")] 
+        public IActionResult Delete(int id)  
+        {  
+            return NoContent();  
+        }
+
+
+
     }
 }
