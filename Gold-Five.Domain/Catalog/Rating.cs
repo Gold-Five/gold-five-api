@@ -1,3 +1,4 @@
+
 using System;
 namespace Gold_Five.Domain.Catalog
 {
