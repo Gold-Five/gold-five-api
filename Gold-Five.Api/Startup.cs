@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Gold_Five.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Gold_Five.Api
 {
@@ -20,6 +23,9 @@ namespace Gold_Five.Api
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddDbContext<StoreContext>(options =>
+                options.UseSqlite("Data Source=../Registrar.sqlite",
+                    b => b.MigrationsAssembly("Gold-Five.Api")));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
