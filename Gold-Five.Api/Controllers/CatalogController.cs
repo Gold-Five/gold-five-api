@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Gold_Five.Domain.Catalog;
 using System.Collections.Generic;
 using Gold_Five.Data;
+using Microsoft.EntityFrameworkCore;
 // using Gold_Five.Api;
 
 
@@ -52,20 +53,40 @@ namespace Gold_Five.Api.Controllers
             }
             item.AddRating(rating);
             _db.SaveChanges();
-            
+
             return Ok(item);
         }
 
         [HttpPut("{id:int}")]
         public IActionResult Put(int id, Item item)  
-        {  
-            return NoContent();  
+        {
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+            if (_db.Items.Find(id) == null)
+            {
+                return NotFound();
+            }
+
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+
+            return NoContent();
         }
 
         [HttpDelete("{id:int}")] 
-        public IActionResult Delete(int id)  
-        {  
-            return NoContent();  
+        public IActionResult DeleteItem(int id)  
+        {
+            var item = _db.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            _db.Items.Remove(item);
+            _db.SaveChanges();
+
+            return Ok();
         }
 
     }
