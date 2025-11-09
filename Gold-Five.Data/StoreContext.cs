@@ -1,4 +1,5 @@
 ﻿using Gold_Five.Domain.Catalog;
+using Gold_Five.Domain.Orders;  
 using Microsoft.EntityFrameworkCore;
 
 namespace Gold_Five.Data
