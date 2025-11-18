@@ -17,4 +17,8 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gold-Five.Domain\Gold-Five.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
