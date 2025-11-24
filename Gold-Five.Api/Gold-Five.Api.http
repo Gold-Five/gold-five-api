@@ -1,6 +1,20 @@
-@Gold_Five.Api_HostAddress = http://localhost:5016
+# @Gold_Five.Api_HostAddress = http://localhost:5016
 
-GET {{Gold_Five.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+# GET {{Gold_Five.Api_HostAddress}}/weatherforecast/
+# Accept: application/json
 
 ###
+
+curl --request POST \
+  --url https://dev-xgc6yi30hnk8kqnw.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{
+    "client_id":"rmD1E14XlRyL8rBhr9RCiPeYwCLGeUrS",
+    "client_secret":"9xGNZSKOiy416QOA11uEGqJTomOzTlXLivoMwAu496FRqai8Egj5Ng-vrK-cZTIZ",
+    "audience":"https://gold-five",
+    "grant_type":"client_credentials"
+  }'
+
+### DELETE an item from catalog
+DELETE http://localhost:5016/catalog/1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImluNGNrSFVNLUVUczFjay1LVnE0YSJ9.eyJpc3MiOiJodHRwczovL2Rldi14Z2M2eWkzMGhuazhrcW53LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJybUQxRTE0WGxSeUw4ckJocjlSQ2lQZVl3Q0xHZVVyU0BjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9nb2xkLWZpdmUiLCJpYXQiOjE3NjM5NDg5NzAsImV4cCI6MTc2NDAzNTM3MCwic2NvcGUiOiJkZWxldGU6Y2F0YWxvZyIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsImF6cCI6InJtRDFFMTRYbFJ5TDhyQmhyOVJDaVBlWXdDTEdlVXJTIn0.rerS2MNDUl80md9wX46Ufmne9I-CYuDYSOIC29acKJtqc2naPehHj7jg1LgcrJ9tZcEfxJWXGAsvSQkNViBPfwbfoGiYYDHDTWZ_xCToeLKzizt30tjsL-kCNNZddop1PhVBKYuk8O4JuVlQn85MTnUcpyToxyVSCuDac9jbVYCidR9oLiHcY_-HWpku_H97sRrlu_cEgUlJj0rx3R3zD2wm6hm6NxEcnZRCLV2dlHVea37kr3gAOAVe4T4qAIkhcC6RPDUtnP4EV-ozWCWCGlf5060xO7TcVZ4waAsPcl7IBVV1lIvDBBboqhGoj30Ii4cTkKkrlysyHEFHhj9ZXw
